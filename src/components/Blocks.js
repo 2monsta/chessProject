@@ -13,7 +13,6 @@ class Blocks extends Component {
 
 
 	render() {
-
 		const color = this.props.color;
 		var styles = "";
 		if(color === 'darkYellow'){
@@ -21,48 +20,46 @@ class Blocks extends Component {
 		}else{
 			styles = 'whtie';
 		}
-
-
 		if(this.props.pieces==="pawn"){
+			console.log(this.props.num);
 			return(
 				<div style={{backgroundColor: styles, width:'12%', height:'100px', display:'inline-block'}}>
-					<Pawn/>
+					<Pawn ownNumber={this.props.num}/>
 				</div>
 			)
 		}
 		else if(this.props.pieces ==="rook"){ 
 			return(
 				<div style={{backgroundColor: styles, width:'12%', height:'100px', display:'inline-block'}}>
-					<Rook/>
+					<Rook ownNumber={this.props.num}/>
 				</div>
 			)
 		}
-
 		else if(this.props.pieces ==="knight"){ 
 			return(
 				<div style={{backgroundColor: styles, width:'12%', height:'100px', display:'inline-block'}}>
-					<Knight/>
+					<Knight ownNumber={this.props.num}/>
 				</div>
 			)
 		}
 		else if(this.props.pieces ==="bishop"){ 
 			return(
 				<div style={{backgroundColor: styles, width:'12%', height:'100px', display:'inline-block'}}>
-					<Bishop/>
+					<Bishop ownNumber={this.props.num}/>
 				</div>
 			)
 		}
 		else if(this.props.pieces ==="king"){ 
 			return(
 				<div style={{backgroundColor: styles, width:'12%', height:'100px', display:'inline-block'}}>
-					<King/>
+					<King ownNumber={this.props.num}/>
 				</div>
 			)
 		}
 		else if(this.props.pieces ==="queen"){ 
 			return(
 				<div style={{backgroundColor: styles, width:'12%', height:'100px', display:'inline-block'}}>
-					<Queen/>
+					<Queen ownNumber={this.props.num}/>
 				</div>
 			)
 		}
