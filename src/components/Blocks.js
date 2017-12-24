@@ -9,63 +9,69 @@ import Queen from './Queen';
 
 
 class Blocks extends Component {
-
-
-
+	constructor(){
+		super();
+		this.state={}
+	}
 	render() {
 		const color = this.props.color;
-		var styles = "";
+		var styles = {
+			backgroundColor: 'white',
+			width: '12%',
+			height: '100px',
+			display: 'inline-block'
+		};
 		if(color === 'darkYellow'){
-			styles= "#D28C4D"
+			styles.backgroundColor= "#D28C4D"
 		}else{
-			styles = 'whtie';
+			styles.backgroundColor = 'whtie';
 		}
 		if(this.props.pieces==="pawn"){
 			console.log(this.props.num);
 			return(
-				<div style={{backgroundColor: styles, width:'12%', height:'100px', display:'inline-block'}}>
+				<div style={styles}>
 					<Pawn ownNumber={this.props.num}/>
 				</div>
 			)
 		}
 		else if(this.props.pieces ==="rook"){ 
 			return(
-				<div style={{backgroundColor: styles, width:'12%', height:'100px', display:'inline-block'}}>
+				<div style={styles}>
 					<Rook ownNumber={this.props.num}/>
 				</div>
 			)
 		}
 		else if(this.props.pieces ==="knight"){ 
 			return(
-				<div style={{backgroundColor: styles, width:'12%', height:'100px', display:'inline-block'}}>
+				<div style={styles}>
 					<Knight ownNumber={this.props.num}/>
 				</div>
 			)
 		}
 		else if(this.props.pieces ==="bishop"){ 
 			return(
-				<div style={{backgroundColor: styles, width:'12%', height:'100px', display:'inline-block'}}>
+				<div style={styles}>
 					<Bishop ownNumber={this.props.num}/>
 				</div>
 			)
 		}
 		else if(this.props.pieces ==="king"){ 
 			return(
-				<div style={{backgroundColor: styles, width:'12%', height:'100px', display:'inline-block'}}>
+				<div style={styles}>
 					<King ownNumber={this.props.num}/>
 				</div>
 			)
 		}
 		else if(this.props.pieces ==="queen"){ 
 			return(
-				<div style={{backgroundColor: styles, width:'12%', height:'100px', display:'inline-block'}}>
+				<div style={styles}>
 					<Queen ownNumber={this.props.num}/>
 				</div>
 			)
 		}
 		return (
 			//give the div a color
-			<div style={{backgroundColor: styles, width:'12%', height:'100px', display:'inline-block'}}>
+			<div style={styles}>
 			</div>
 		);
 	}

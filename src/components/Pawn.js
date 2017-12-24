@@ -6,8 +6,7 @@ class Pawn extends Component {
 		this.move = this.move.bind(this);
 	}
 	move(){
-		console.log("this clicks");
-		console.log(this.props.ownNumber)
+		console.log(this.props.ownNumber -16);
 	}
 	render() {
 

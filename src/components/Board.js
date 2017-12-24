@@ -4,8 +4,15 @@ import Blocks from './Blocks';
 
 
 class Board extends Component {
+	constructor(){
+		super();
+		this.state={
+			blocks: [],
+		}
+	}
 	
-	render() {
+
+	componentDidMount(){
 		const blocks = [];
 		const pieces = [
 			'pawn',
@@ -15,7 +22,6 @@ class Board extends Component {
 			'king',
 			'queen',
 		]
-
 		for(let i=0; i<8; i++){
 			if(i%2===0){
 				blocks.push(<Blocks color="darkYellow"/>)
@@ -97,11 +103,17 @@ class Board extends Component {
 				blocks[i] = (<Blocks color="darkYellow" pieces={pieces[1]} num={i}/>)
 			}
 		}
+		this.setState({
+			blocks : blocks
+		})
+	}
+
+	render() {
 
     return (
       <div className="App container">
 				<div className="row">
-					{blocks}
+					{this.state.blocks}
 				</div>
       </div>
     );
